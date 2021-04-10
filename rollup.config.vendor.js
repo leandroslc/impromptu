@@ -9,6 +9,16 @@ const bootstrapCSS = sass({
   watch: false,
 });
 
+const bootstrapJS = copy({
+  bundleName: 'bootstrap',
+  inputs: {
+    ['']: [
+      './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+      './node_modules/bootstrap/dist/js/bootstrap.min.js'
+    ],
+  }
+});
+
 const bootstrapIconsCSS = css({
   bundleName: 'bootstrap-icons',
   input: './node_modules/bootstrap-icons/font/bootstrap-icons.css',
@@ -24,6 +34,7 @@ const bootstrapIconsFonts = copy({
 
 export default [
   bootstrapCSS,
+  bootstrapJS,
   bootstrapIconsCSS,
   bootstrapIconsFonts,
 ];

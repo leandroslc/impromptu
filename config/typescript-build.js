@@ -16,7 +16,7 @@ const build = ({ bundleName, input, watch, production }) => {
     input: input,
     output: config.getOutputs(bundleName, outputDir => {
       return {
-        file: path.join(outputDir, config.getFileName(bundleName, 'js')),
+        file: path.join(outputDir, config.getFileName({name: bundleName, extension: 'js', production})),
         format: 'iife',
       };
     }),

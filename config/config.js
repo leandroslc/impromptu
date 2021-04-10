@@ -14,18 +14,13 @@ const getOutputs = (name, outputMap) => {
   });
 };
 
-const getFileName = (name, extension) => {
-  return `${name}.${extension}`;
-};
-
-const getFileNameByExtension = (extension) => {
-  return getFileName(projectName, extension);
+const getFileName = ({ name, extension, production }) => {
+  return `${name}.${production ? 'min.' : ''}${extension}`;
 };
 
 const config = {
   projectName,
   getFileName,
-  getFileNameByExtension,
   getOutputs,
 };
 

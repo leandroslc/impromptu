@@ -6,9 +6,10 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "start": "npm run build -- --watch",
-    "build": "cross-env NODE_ENV=production rollup -c rollup.config.js",
-    "serve": "sirv build --cors --port 3002",
+    "start": "npm run build:base -- --watch",
+    "build": "cross-env NODE_ENV=production npm run build:base",
+    "build:base": "rollup -c rollup.config.js",
+    "serve": "sirv build --cors --port 3002 --dev",
     "vendor": "rollup -c rollup.config.vendor.js"
   },
   "devDependencies": {

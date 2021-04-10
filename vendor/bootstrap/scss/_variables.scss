@@ -1,4 +1,6 @@
-$primary: #3272b2;
+@use '../../../scss/core/core';
+
+$primary: core.color('primary');
 
 $link-color: #1976d2;
 

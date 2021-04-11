@@ -57,6 +57,7 @@ $item-padding-x: 1rem;
   font-weight: 500;
   text-decoration: none;
   border-radius: 0.3rem;
+  transition: background-color 0.2s;
 
   &:hover, &:focus {
     color: core.color('sidenav-item-text-hover');
@@ -67,10 +68,11 @@ $item-padding-x: 1rem;
   &.is-active {
     margin-left: -#{$item-margin-x};
     margin-right: -#{$item-margin-x};
-    padding-right: #{$item-padding-x + $item-margin-x};
+    padding-right: #{$item-padding-x};
     padding-left: #{$item-padding-x + $item-margin-x};
     color: core.color('sidenav-item-active-text');
     background-color: core.color('sidenav-item-active-bg');
+    border-right: #{$item-margin-x} solid #{core.color('sidenav-item-active-text')};
     border-radius: 0;
   }
 }

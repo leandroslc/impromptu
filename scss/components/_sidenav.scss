@@ -1,4 +1,3 @@
-@use 'sass:color';
 @use '../core/core';
 @use '../core/vars';
 
@@ -13,8 +12,8 @@ $item-padding-x: 1rem;
   flex-direction: column;
   width: $width;
   height: 100%;
-  background-color: core.color('primary');
-  border-right: 1px solid core.color('primary');
+  background-color: core.color('sidenav-bg');
+  border-right: 1px solid core.color('sidenav-border');
   transform: translateX(-#{$width});
 
   @include core.bq-greather-than('md') {
@@ -53,15 +52,15 @@ $item-padding-x: 1rem;
   align-items: center;
   margin: 0.2rem 0;
   padding: 0.5rem $item-padding-x;
-  color: core.color('in-primary-soft');
+  color: core.color('sidenav-item-text');
   font-size: 0.9rem;
   font-weight: 500;
   text-decoration: none;
   border-radius: 0.3rem;
 
   &:hover, &:focus {
-    color: core.color('in-primary');
-    background-color: color.change(core.color('dark'), $alpha: 0.175);
+    color: core.color('sidenav-item-text-hover');
+    background-color: core.color('sidenav-item-bg-hover');
     text-decoration: none;
   }
 
@@ -70,8 +69,8 @@ $item-padding-x: 1rem;
     margin-right: -#{$item-margin-x};
     padding-right: #{$item-padding-x + $item-margin-x};
     padding-left: #{$item-padding-x + $item-margin-x};
-    color: core.color('text');
-    background-color: core.color('soft-background');
+    color: core.color('sidenav-item-active-text');
+    background-color: core.color('sidenav-item-active-bg');
     border-radius: 0;
   }
 }

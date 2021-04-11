@@ -3,10 +3,11 @@
 @use '../core/vars';
 
 $height: vars.$navbar-height;
+$zindex: vars.$navbar-zindex;
 
-#{core.class('navbar')} {
+.navbar {
   position: relative;
-  z-index: 9;
+  z-index: $zindex;
   display: flex;
   align-items: center;
   width: 100%;
@@ -17,23 +18,25 @@ $height: vars.$navbar-height;
   box-shadow: 0 1px 3px core.color('shadow');
 }
 
-#{core.class('navbar-brand')} {
+.navbar-brand {
   display: flex;
   align-items: center;
   height: 100%;
-
-  @include core.bq-greather-than('md') {
-    display: none;
-  }
 }
 
-#{core.class('navbar-title')} {
+.navbar-title {
   margin-bottom: 0;
   font-size: 1rem;
   font-weight: 500;
 }
 
-#{core.class('navbar-toggle')} {
+.navbar-logo {
+  position: relative;
+  width: auto;
+  height: 90%;
+}
+
+.navbar-toggle {
   display: inline-block;
   padding: 0.4rem 0.8rem;
   font-size: 1.4rem;
@@ -45,6 +48,11 @@ $height: vars.$navbar-height;
 
   &:hover, &:focus {
     background-color: color.change(core.color('dark'), $alpha: 0.075);
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.17rem color.change(core.color('dark'), $alpha: 0.175);
   }
 
   @include core.bq-greather-than('md') {

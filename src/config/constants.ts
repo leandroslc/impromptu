@@ -3,8 +3,8 @@ const constants = {
   components: {
     sidebar: {
       expandedClass: 'is-expanded',
-      backdropClass: 'im-sidenav-backdrop',
-      toggleAttribute: 'im-sidenav-toggle',
+      backdropClass: 'sidenav-backdrop',
+      toggleAttribute: 'sidenav-toggle',
     },
   },
 };

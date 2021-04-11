@@ -14,20 +14,25 @@ $color-primary: #3272b2;
 $color-text: #3d4e59;
 
 $colors: (
-  'background': #f0f0f5,
+  'background': #eff2f7,
+  'inverse': $color-inverse,
+  'inverse-900': $color-inverse-900,
   'navbar-bg': $color-inverse,
   'navbar-text': $color-text,
   'navbar-toggle-bg': color.change($color-neutral, $alpha: 0.075),
   'navbar-toggle-border': color.change($color-neutral, $alpha: 0.175),
+  'page-card-bg': $color-inverse,
+  'page-card-header-border': #bdbdbd,
   'primary': $color-primary,
   'shadow': color.change($color-neutral, $alpha: 0.175),
-  'sidenav-bg': $color-primary,
-  'sidenav-border': $color-primary,
-  'sidenav-item-active-bg': $color-inverse-900,
-  'sidenav-item-active-text': $color-text,
-  'sidenav-item-bg-hover': color.change($color-neutral, $alpha: 0.175),
-  'sidenav-item-text': $color-inverse-900,
-  'sidenav-item-text-hover': $color-inverse,
+  'shadow-50': color.change($color-neutral, $alpha: 0.075),
+  'sidenav-bg': $color-inverse-900,
+  'sidenav-border': $color-inverse-900,
+  'sidenav-item-active-bg': color.change($color-neutral, $alpha: 0.025),
+  'sidenav-item-active-text': $color-primary,
+  'sidenav-item-bg-hover': color.change($color-primary, $alpha: 0.05),
+  'sidenav-item-text': $color-text,
+  'sidenav-item-text-hover': $color-text,
   'text': $color-text,
 );
 

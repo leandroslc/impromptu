@@ -1,0 +1,18 @@
+
+.page-table {
+  margin-bottom: 0;
+  border: 0;
+
+  > tbody > tr > td {
+    border-left: none;
+    border-right: none;
+  }
+
+  > thead > tr > th {
+    font-weight: 500;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom-width: 1px;
+  }
+}

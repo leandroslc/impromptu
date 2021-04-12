@@ -1,12 +1,11 @@
 
-const constants = {
-  components: {
-    sidebar: {
-      expandedClass: 'is-expanded',
-      backdropClass: 'sidenav-backdrop',
-      toggleAttribute: 'sidenav-toggle',
-    },
-  },
+export const sidebarConstants = {
+  expandedClass: 'is-expanded',
+  backdropClass: 'sidenav-backdrop',
+  toggleAttribute: 'sidenav-toggle',
 };
 
-export default constants;
+export const loadingConstants = {
+  toggleAttribute: 'loading',
+  hideAttribute: 'loading-hide',
+};

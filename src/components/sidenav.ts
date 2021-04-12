@@ -1,9 +1,9 @@
-import constants from '../config/constants';
+import { sidebarConstants } from '../config/constants';
 
 const EscapeKey = 'Escape';
-const ToggleAttribute = constants.components.sidebar.toggleAttribute;
-const ExpandedClass = constants.components.sidebar.expandedClass;
-const BackdropClass = constants.components.sidebar.backdropClass;
+const ToggleAttribute = sidebarConstants.toggleAttribute;
+const ExpandedClass = sidebarConstants.expandedClass;
+const BackdropClass = sidebarConstants.backdropClass;
 
 class Sidenav {
   sidebarElement: HTMLElement;

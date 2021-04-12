@@ -22,7 +22,7 @@ $colors: (
   'navbar-toggle-bg': color.change($color-neutral, $alpha: 0.075),
   'navbar-toggle-border': color.change($color-neutral, $alpha: 0.175),
   'page-card-bg': $color-inverse,
-  'page-card-header-border': #dedede,
+  'page-card-header-border': color.change(#dedede, $alpha: 0.6),
   'primary': $color-primary,
   'shadow': color.change($color-neutral, $alpha: 0.175),
   'shadow-50': color.change($color-neutral, $alpha: 0.075),

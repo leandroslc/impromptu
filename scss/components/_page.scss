@@ -18,14 +18,14 @@ $card-padding-x: 1.5rem;
   background-color: core.color('primary');
   box-shadow: 0 -0.2rem 0.27rem #{core.color('shadow')} inset;
 
-  & ~ .page-container {
+  & + .page-container {
     margin-top: -1rem;
   }
 }
 
 .page-container {
   width: 100%;
-  margin: 0 auto 0.4rem auto;
+  margin: 0 auto 1.2rem auto;
   padding: 0 0.4rem;
   max-width: 56.2rem;
 }

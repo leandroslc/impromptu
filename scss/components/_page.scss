@@ -17,6 +17,10 @@ $card-padding-x: 1.2rem;
   color: core.color('inverse');
   background-color: core.color('primary');
   box-shadow: 0 -0.2rem 0.27rem #{core.color('shadow')} inset;
+
+  & ~ .page-container {
+    margin-top: -1rem;
+  }
 }
 
 .page-container {
@@ -27,10 +31,9 @@ $card-padding-x: 1.2rem;
 }
 
 .page-card {
-  margin-top: -1rem;
   background-color: core.color('page-card-bg');
-  border-radius: 0.3rem;
-  box-shadow: 0 0 5px 0 #{core.color('shadow')}, 0 11px 6px -7px #{core.color('shadow-50')};
+  border-radius: 0.2rem;
+  box-shadow: 0 0 5px 0 #{core.color('shadow-50')}, 0 11px 6px -7px #{core.color('shadow-50')};
 }
 
 .page-card-header {
@@ -51,7 +54,6 @@ $card-padding-x: 1.2rem;
 
 .page-card-content {
   padding: 1.2rem $card-padding-x;
-  min-height: 12rem;
 }
 
 .page-back {

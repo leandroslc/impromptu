@@ -24,6 +24,7 @@ $colors: (
   'page-card-bg': $color-inverse,
   'page-card-header-border': color.change(#dedede, $alpha: 0.6),
   'primary': $color-primary,
+  'secondary-bg': color.change($color-primary, $alpha: 0.14),
   'shadow': color.change($color-neutral, $alpha: 0.175),
   'shadow-50': color.change($color-neutral, $alpha: 0.075),
   'sidenav-bg': $color-inverse-900,

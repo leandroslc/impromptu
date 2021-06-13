@@ -5,3 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
   Sidenav.findByToggle()?.initialize();
   Loading.initializeAll();
 });
+
+declare global {
+  interface Window {
+    Loading: typeof Loading;
+  }
+}
+
+window.Loading = Loading;

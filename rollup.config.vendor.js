@@ -52,6 +52,13 @@ const jqueryValidationJS = copy({
   },
 });
 
+const jqueryValidationUnobtrusiveJS = copy({
+  bundleName: 'jquery-validation-unobtrusive',
+  inputs: {
+    ['']: './node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js',
+  },
+});
+
 export default [
   bootstrapCSS,
   bootstrapJS,
@@ -59,4 +66,5 @@ export default [
   bootstrapIconsFonts,
   jqueryJS,
   jqueryValidationJS,
+  jqueryValidationUnobtrusiveJS,
 ];

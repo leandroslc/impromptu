@@ -32,9 +32,31 @@ const bootstrapIconsFonts = copy({
   },
 });
 
+const jqueryJS = copy({
+  bundleName: 'jquery',
+  inputs: {
+    ['']: [
+      './node_modules/jquery/dist/jquery.min.js',
+      './node_modules/jquery/dist/jquery.slim.min.js'
+    ],
+  },
+});
+
+const jqueryValidationJS = copy({
+  bundleName: 'jquery-validation',
+  inputs: {
+    ['']: [
+      './node_modules/jquery-validation/dist/jquery.validate.min.js',
+      './node_modules/jquery-validation/dist/additional-methods.min.js',
+    ],
+  },
+});
+
 export default [
   bootstrapCSS,
   bootstrapJS,
   bootstrapIconsCSS,
   bootstrapIconsFonts,
+  jqueryJS,
+  jqueryValidationJS,
 ];

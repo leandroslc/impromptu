@@ -59,11 +59,22 @@ const jqueryValidationUnobtrusiveJS = copy({
   },
 });
 
+const cookieConsent = copy({
+  bundleName: 'cookieconsent',
+  inputs: {
+    ['']: [
+      './node_modules/cookieconsent/build/cookieconsent.min.css',
+      './node_modules/cookieconsent/build/cookieconsent.min.js',
+    ],
+  },
+});
+
 export default [
   bootstrapCSS,
   bootstrapJS,
   bootstrapIconsCSS,
   bootstrapIconsFonts,
+  cookieConsent,
   jqueryJS,
   jqueryValidationJS,
   jqueryValidationUnobtrusiveJS,

@@ -4,7 +4,7 @@ import path from 'path';
 import postcss from 'rollup-plugin-postcss';
 import config from './config';
 
-const build = ({ bundleName, input, watch, production }) => {
+const build = ({ bundleName, name, input, watch, production }) => {
   const postCssPlugins = [
     autoprefixer(),
   ];
@@ -17,7 +17,7 @@ const build = ({ bundleName, input, watch, production }) => {
     input: input,
     output: config.getOutputs(bundleName, outputDir => {
       return {
-        file: path.join(outputDir, config.getFileName({name: bundleName, extension: 'css', production})),
+        file: path.join(outputDir, config.getFileName({name: name || bundleName, extension: 'css', production})),
       };
     }),
     plugins: [

@@ -4,6 +4,10 @@ import { setDisabled, setEnabled, show, hide, tryGetElementById } from '../utils
 const ToggleAttribute = loadingConstants.toggleAttribute;
 const HideAttribute = loadingConstants.hideAttribute;
 
+type IsValidHandler = (form: HTMLFormElement) => boolean;
+
+let isValid: IsValidHandler;
+
 class Loading {
   form: HTMLFormElement;
   loading?: HTMLElement;
@@ -12,6 +16,10 @@ class Loading {
 
   constructor(form: HTMLFormElement) {
     this.form = form;
+  }
+
+  static setIsValidHandler(handler: IsValidHandler) {
+    isValid = handler;
   }
 
   static initializeAll() {
@@ -58,7 +66,11 @@ class Loading {
   }
 
   attachSubmitEvent() {
-    this.form.addEventListener('submit', () => {
+    this.form.addEventListener('submit', (event) => {
+      if (isValid && isValid(event.currentTarget as HTMLFormElement) === false) {
+        return;
+      }
+
       this.start();
     });
   }

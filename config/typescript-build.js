@@ -3,7 +3,7 @@ import { terser } from 'rollup-plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import config from './config';
 
-const build = ({ bundleName, input, watch, production }) => {
+const build = ({ bundleName, name, input, watch, production }) => {
   const plugins = [
     typescript(),
   ];
@@ -16,7 +16,7 @@ const build = ({ bundleName, input, watch, production }) => {
     input: input,
     output: config.getOutputs(bundleName, outputDir => {
       return {
-        file: path.join(outputDir, config.getFileName({name: bundleName, extension: 'js', production})),
+        file: path.join(outputDir, config.getFileName({name: name || bundleName, extension: 'js', production})),
         format: 'iife',
       };
     }),

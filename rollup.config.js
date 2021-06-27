@@ -1,6 +1,7 @@
 import config from './config/config';
 import sass from './config/sass-build';
 import typescript from './config/typescript-build';
+import copy from './config/copy-build';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -18,7 +19,15 @@ const js = typescript({
   production: isProduction,
 });
 
+const imgs = copy({
+  bundleName: 'img',
+  inputs: {
+    ['']: './assets/imgs/*',
+  }
+});
+
 export default [
   css,
   js,
+  imgs,
 ];

@@ -12,6 +12,14 @@ const css = sass({
   production: isProduction,
 });
 
+const loginCss = sass({
+  bundleName: config.projectName,
+  name: `${config.projectName}-login`,
+  input: './scss/login.scss',
+  watch: './scss/**/*.scss',
+  production: isProduction,
+});
+
 const js = typescript({
   bundleName: config.projectName,
   input: './src/index.ts',
@@ -28,6 +36,7 @@ const imgs = copy({
 
 export default [
   css,
+  loginCss,
   js,
   imgs,
 ];

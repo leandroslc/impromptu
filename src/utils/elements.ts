@@ -1,11 +1,21 @@
 const DisabledAttribute = 'disabled';
 
+type ElementCollection = NodeListOf<Element> | Element[];
+
 export function setDisabled(element: Element) {
   element.setAttribute(DisabledAttribute, DisabledAttribute);
 }
 
+export function setDisabledAll(elements: ElementCollection) {
+  elements.forEach((element: Element) => setDisabled(element));
+}
+
 export function setEnabled(element: Element) {
   element.removeAttribute(DisabledAttribute);
+}
+
+export function setEnabledAll(elements: ElementCollection) {
+  elements.forEach((element: Element) => setEnabled(element));
 }
 
 export function show(element: HTMLElement) {

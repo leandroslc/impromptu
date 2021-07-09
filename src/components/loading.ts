@@ -1,5 +1,5 @@
 import { loadingConstants } from '../config/constants';
-import { setDisabled, setEnabled, show, hide, tryGetElementById } from '../utils/elements';
+import { setDisabledAll, setEnabledAll, show, hide, tryGetElementById } from '../utils/elements';
 
 const ToggleAttribute = loadingConstants.toggleAttribute;
 const HideAttribute = loadingConstants.hideAttribute;
@@ -8,11 +8,15 @@ type IsValidHandler = (form: HTMLFormElement) => boolean;
 
 let isValid: IsValidHandler;
 
+function hasAtLeastOneElement(elements?: NodeListOf<Element> | null) {
+  return elements && elements.length > 0;
+}
+
 class Loading {
   form: HTMLFormElement;
   loading?: HTMLElement;
   elementToHide?: HTMLElement;
-  submit?: Element | null;
+  submits?: NodeListOf<Element> | null;
 
   constructor(form: HTMLFormElement) {
     this.form = form;
@@ -62,7 +66,7 @@ class Loading {
       this.elementToHide = tryGetElementById(elementToHideId);
     }
 
-    this.submit = this.form.querySelector('[type="submit"]');
+    this.submits = this.form.querySelectorAll('[type="submit"]');
   }
 
   attachSubmitEvent() {
@@ -76,8 +80,8 @@ class Loading {
   }
 
   start() {
-    if (this.submit) {
-      setDisabled(this.submit);
+    if (hasAtLeastOneElement(this.submits)) {
+      setDisabledAll(this.submits!);
     }
 
     if (this.loading) {
@@ -90,8 +94,8 @@ class Loading {
   }
 
   stop() {
-    if (this.submit) {
-      setEnabled(this.submit);
+    if (hasAtLeastOneElement(this.submits)) {
+      setEnabledAll(this.submits!);
     }
 
     if (this.loading) {

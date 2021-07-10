@@ -41,9 +41,13 @@ $item-padding-x: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: auto;
+  height: 100%;
   padding: 1.2rem $item-margin-x;
   overflow-x: hidden;
+
+  @include core.bq-greather-than('md') {
+    height: auto;
+  }
 }
 
 .sidebar-item {

@@ -10,11 +10,9 @@
 
 .footer-link {
   color: core.color('text');
-  text-decoration: none;
-  border-bottom: 1px solid core.color('text');
+  text-decoration: underline;
 
   &:hover, &:focus {
     color: core.color('text');
-    text-decoration: none;
   }
 }

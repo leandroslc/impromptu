@@ -1,6 +1,7 @@
 import copy from './config/copy-build';
 import css from './config/css-build';
 import sass from './config/sass-build';
+import typescript from './config/typescript-build';
 
 const bootstrapCSS = sass({
   bundleName: 'bootstrap',
@@ -69,12 +70,20 @@ const cookieConsent = copy({
   },
 });
 
+const customCookieConsentJS = typescript({
+  bundleName: 'cookieconsent',
+  name: 'cookieconsent-default',
+  input: './vendor/cookieconsent/src/index.ts',
+  production: true,
+});
+
 export default [
   bootstrapCSS,
   bootstrapJS,
   bootstrapIconsCSS,
   bootstrapIconsFonts,
   cookieConsent,
+  customCookieConsentJS,
   jqueryJS,
   jqueryValidationJS,
   jqueryValidationUnobtrusiveJS,

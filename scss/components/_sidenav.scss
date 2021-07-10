@@ -41,7 +41,7 @@ $item-padding-x: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: 100vh;
+  height: auto;
   padding: 1.2rem $item-margin-x;
   overflow-x: hidden;
 }

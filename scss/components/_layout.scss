@@ -4,11 +4,12 @@
 .layout {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr auto;
   grid-template-areas:
     "header header"
-    "sidenav main";
-  height: calc(100% + #{vars.$navbar-height});
+    "sidenav main"
+    "footer footer";
+  height: 100%;
 }
 
 .layout-header {
@@ -25,4 +26,8 @@
 
 .layout-sidenav {
   grid-area: sidenav;
+}
+
+.layout-footer {
+  grid-area: footer;
 }

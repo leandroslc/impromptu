@@ -1,0 +1,20 @@
+@use '../core/core';
+
+.footer {
+  display: flex;
+  padding: 0.8rem 1.2rem;
+  font-size: 0.9rem;
+  background-color: core.color('footer-bg');
+  border-top: 1px solid core.color('footer-border');
+}
+
+.footer-link {
+  color: core.color('text');
+  text-decoration: none;
+  border-bottom: 1px solid core.color('text');
+
+  &:hover, &:focus {
+    color: core.color('text');
+    text-decoration: none;
+  }
+}

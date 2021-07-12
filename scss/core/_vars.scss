@@ -37,6 +37,10 @@ $colors: (
   'sidenav-item-text': $color-text,
   'sidenav-item-text-hover': $color-text,
   'text': $color-text,
+  'user-menu-bg': $color-inverse,
+  'user-menu-border': rgba(0, 0, 0, .15),
+  'user-menu-item-hover': color.change($color-primary, $alpha: 0.1),
+  'user-menu-toggle-bg': $color-inverse-900,
 );
 
 $breakpoints: (

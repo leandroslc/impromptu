@@ -115,7 +115,7 @@ $menu-arrow-offset: $menu-margin-top + $menu-padding-y + ($menu-arrow-border-off
   }
 
   &::before {
-    top: -$menu-arrow-offset;
+    top: -#{$menu-arrow-offset + $menu-arrow-border-offset};
     border-bottom-color: core.color('user-menu-border');
   }
 }

@@ -16,3 +16,18 @@
     color: core.color('text');
   }
 }
+
+.footer-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.footer-list-item {
+  padding: 0 0.5rem;
+
+  & + & {
+    border-left: 1px solid core.color('footer-border');
+  }
+}

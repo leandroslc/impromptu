@@ -31,6 +31,7 @@ To start the local server you can use `npm run serve` or `npm run serve:dev` to 
 - bootstrap (v4.6)
 - bootstrap-icons (v1.4)
 - cookieconsent (v3.1)
+- imask (v6.1)
 - impromptu
 - jquery (v3.6)
 - jquery-validation (v1.19)

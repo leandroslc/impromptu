@@ -33,6 +33,32 @@ const bootstrapIconsFonts = copy({
   },
 });
 
+const cookieConsent = copy({
+  bundleName: 'cookieconsent',
+  inputs: {
+    ['']: [
+      './node_modules/cookieconsent/build/cookieconsent.min.css',
+      './node_modules/cookieconsent/build/cookieconsent.min.js',
+    ],
+  },
+});
+
+const customCookieConsentJS = typescript({
+  bundleName: 'cookieconsent',
+  name: 'cookieconsent-default',
+  input: './vendor/cookieconsent/src/index.ts',
+  production: true,
+});
+
+const imaskJS = copy({
+  bundleName: 'imask',
+  name: '',
+  inputs: {
+    ['']: './node_modules/imask/dist/imask.min.js',
+  },
+  production: true,
+});
+
 const jqueryJS = copy({
   bundleName: 'jquery',
   inputs: {
@@ -60,23 +86,6 @@ const jqueryValidationUnobtrusiveJS = copy({
   },
 });
 
-const cookieConsent = copy({
-  bundleName: 'cookieconsent',
-  inputs: {
-    ['']: [
-      './node_modules/cookieconsent/build/cookieconsent.min.css',
-      './node_modules/cookieconsent/build/cookieconsent.min.js',
-    ],
-  },
-});
-
-const customCookieConsentJS = typescript({
-  bundleName: 'cookieconsent',
-  name: 'cookieconsent-default',
-  input: './vendor/cookieconsent/src/index.ts',
-  production: true,
-});
-
 export default [
   bootstrapCSS,
   bootstrapJS,
@@ -84,6 +93,7 @@ export default [
   bootstrapIconsFonts,
   cookieConsent,
   customCookieConsentJS,
+  imaskJS,
   jqueryJS,
   jqueryValidationJS,
   jqueryValidationUnobtrusiveJS,

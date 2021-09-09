@@ -50,6 +50,20 @@ const customCookieConsentJS = typescript({
   production: true,
 });
 
+const fontAwesomeFreeCss = sass({
+  bundleName: 'fontawesome',
+  input: './vendor/fontawesome/scss/index.scss',
+  production: true,
+  watch: false,
+});
+
+const fontAwesomeFreeFonts = copy({
+  bundleName: 'fontawesome',
+  inputs: {
+    ['webfonts']: './node_modules/@fortawesome/fontawesome-free/webfonts/**/*',
+  },
+});
+
 const imaskJS = copy({
   bundleName: 'imask',
   name: '',
@@ -93,6 +107,8 @@ export default [
   bootstrapIconsFonts,
   cookieConsent,
   customCookieConsentJS,
+  fontAwesomeFreeCss,
+  fontAwesomeFreeFonts,
   imaskJS,
   jqueryJS,
   jqueryValidationJS,

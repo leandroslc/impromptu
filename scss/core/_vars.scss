@@ -50,3 +50,6 @@ $breakpoints: (
   lg: 992px,
   xl: 1200px,
 );
+
+$include-login-background: true !default;
+$login-background: '../img/login-background.png' !default;

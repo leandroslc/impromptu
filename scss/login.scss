@@ -1,4 +1,5 @@
 @use './core/core';
+@use './core/vars';
 
 .layout {
   @include core.bq-greather-than('md') {
@@ -13,11 +14,13 @@
 }
 
 .login-background {
-  @include core.bq-greather-than('md') {
-    background-image: url('../img/login-background.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+  @if (vars.$include-login-background) {
+    @include core.bq-greather-than('md') {
+      background-image: url(vars.$login-background);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
   }
 }
 

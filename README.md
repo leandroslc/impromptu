@@ -1,39 +1,45 @@
 
-<h1 align="center">Impromptu</h1>
+<h1 align="center">
+  <img src="./logo.svg" width="368" alt="Impromptu" />
+</h1>
 
 <p align="center">
   A very simplistic improvised compilation of web design assets to help create a consistent design.
 </p>
 
+<p align="center">
+  <strong>Used by the <a href="https://github.com/leandroslc/nocturne-auth-server">Nocturne Auth Server</a></strong>
+</p>
 
-## Sketches
-You can view a draft of most components [here](https://www.figma.com/file/AM1vxefhkHT64IFXcIQvTx/Design-System?node-id=0%3A1).
 
-
-## Getting started
+## Quick Setup
+- Clone the project.
 - Make sure [Node JS](https://nodejs.org) is installed.
-- Run `npm run build` to generate the production build assets.
 - Run `npm run vendor` to generate the vendor assets.
-- Run `npm run serve` to start the local server.
+- Run `npm start` to compile and watch for changes or run `npm run build` to generate the production version.
+- Run `npm run serve` to start a local server or `npm run serve:dev` to prevent caching of resources while developing.
 
 
-## Development Server
-To start the local server you can use `npm run serve` or `npm run serve:dev` to prevent caching of resources while developing.
+## Customization
+For now, the only way to use and customize _Impromptu_ is by cloning the project.
 
 
-## Build
-- Use `npm start` to build the _Impromptu_ assets and watch for changes.
-- Use `npm run build` to generate a production bundle of the _Impromptu_ assets.
-- Use `npm run vendor` to generate the production vendor bundles.
+### Customizing styles
+Most of the styles (including vendor's) are compiled using [Sass](https://sass-lang.com). There are variables that can be modified for quick customization, like colors. For _Impromptu_, these variables are placed in `scss/core/_vars.scss`. For vendors, they are usually placed in `_variables.scss` files.
+
+**Note:** It is highly encouraged to change the default colors.
 
 
-## Included bundles
-- bootstrap (v4.6)
-- bootstrap-icons (v1.4)
-- cookieconsent (v3.1)
-- fontawesome-free (v5.15)
-- imask (v6.1)
-- impromptu
-- jquery (v3.6)
-- jquery-validation (v1.19)
-- jquery-validation-unobtrusive (v3.2)
+## Included assets
+Beside _Impromptu_ itself, this project includes the following assets:
+
+Name                           | Version
+:----------------------------- | :------
+bootstrap                      | 4.6
+bootstrap-icons                | 1.4
+cookieconsent                  | 3.1
+fontawesome-free               | 5.15
+imask                          | 6.1
+jquery                         | 3.6
+jquery-validation              | 1.19
+jquery-validation-unobtrusive  | 3.2

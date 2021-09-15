@@ -12,17 +12,17 @@ $toggle-padding-right: $chevron-border-width * 2 + $chevron-margin + $toggle-mar
   display: flex;
   align-items: center;
   padding: 0.3rem $toggle-padding-right 0.3rem $toggle-margin-x;
-  font-weight: 400;
   font-size: 0.93rem;
+  font-weight: 400;
   color: core.color('text');
   text-decoration: none;
-  vertical-align: middle;
   white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
   background: core.color('user-menu-toggle-bg');
   border: none;
   border-radius: 50rem;
-  user-select: none;
-  cursor: pointer;
 
   &:hover,
   &:focus {
@@ -35,8 +35,8 @@ $toggle-padding-right: $chevron-border-width * 2 + $chevron-margin + $toggle-mar
   &::after {
     position: absolute;
     top: 50%;
-    height: 0.1rem;
     width: $chevron-border-width;
+    height: 0.1rem;
     content: '';
     background-color: currentColor;
   }
@@ -66,8 +66,7 @@ $toggle-padding-right: $chevron-border-width * 2 + $chevron-margin + $toggle-mar
   }
 }
 
-
-$menu-padding-y: .5rem;
+$menu-padding-y: 0.5rem;
 $menu-padding-x: $menu-padding-y;
 $menu-margin-top: 1rem;
 
@@ -98,15 +97,15 @@ $menu-arrow-offset: $menu-margin-top + $menu-padding-y + ($menu-arrow-border-off
 
   &::before,
   &::after {
-    content: '';
     position: absolute;
-    display: block;
     right: 1rem;
+    display: block;
     width: 0;
     height: 0;
-    border-width: #{$menu-arrow-border - $menu-arrow-border-offset} $menu-arrow-border;
-    border-style: solid;
+    content: '';
     border-color: transparent;
+    border-style: solid;
+    border-width: #{$menu-arrow-border - $menu-arrow-border-offset} $menu-arrow-border;
   }
 
   &::after {
@@ -131,19 +130,19 @@ $menu-arrow-offset: $menu-margin-top + $menu-padding-y + ($menu-arrow-border-off
 .user-menu-item {
   display: flex;
   align-items: center;
-  margin-bottom: 0.1rem;
   padding: 0.5rem 1.5rem;
-  text-decoration: none;
+  margin-bottom: 0.1rem;
   color: core.color('text');
+  text-decoration: none;
   white-space: nowrap;
-  border-radius: 0.4rem;
-  user-select: none;
   cursor: pointer;
+  user-select: none;
+  border-radius: 0.4rem;
 
   &:hover,
   &:focus {
-    text-decoration: none;
     color: core.color('text');
+    text-decoration: none;
     background-color: core.color('user-menu-item-hover');
   }
 }

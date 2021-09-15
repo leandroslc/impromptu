@@ -4,15 +4,15 @@
   border: 0;
 
   > tbody > tr > td {
-    border-left: none;
     border-right: none;
+    border-left: none;
   }
 
   > thead > tr > th {
     font-weight: 500;
-    border-left: none;
-    border-right: none;
     border-top: none;
+    border-right: none;
     border-bottom-width: 1px;
+    border-left: none;
   }
 }

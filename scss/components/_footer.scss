@@ -12,7 +12,8 @@
   color: core.color('text');
   text-decoration: underline;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: core.color('text');
   }
 }

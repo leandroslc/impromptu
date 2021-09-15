@@ -18,28 +18,28 @@
     @include core.bq-greather-than('md') {
       background-image: url(vars.$login-background);
       background-repeat: no-repeat;
-      background-size: cover;
       background-attachment: fixed;
+      background-size: cover;
     }
   }
 }
 
 .login-container {
   display: grid;
-  grid-template-columns: 1fr;
   grid-template-areas: "content";
+  grid-template-columns: 1fr;
   height: 100%;
 
   @include core.bq-greather-than('md') {
-    grid-template-columns: 0.8fr 1.2fr;
     grid-template-areas: "aside content";
+    grid-template-columns: 0.8fr 1.2fr;
   }
 }
 
 .login-aside-container {
-  grid-area: aside;
   position: relative;
   display: none;
+  grid-area: aside;
   padding: 5rem 2.5rem 3rem 0.4rem;
 
   @include core.bq-greather-than('md') {
@@ -68,8 +68,8 @@
 }
 
 .login-content-container {
-  grid-area: content;
   display: flex;
+  grid-area: content;
   padding: 2rem 0.8rem 3rem 0.8rem;
   background-color: core.color('background');
 
@@ -85,8 +85,8 @@
   max-width: 27rem;
 
   @include core.bq-greather-than('sm') {
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
   }
 
   @include core.bq-greather-than('md') {

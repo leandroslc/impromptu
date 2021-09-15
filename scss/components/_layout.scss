@@ -3,24 +3,24 @@
 
 .layout {
   display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto 1fr auto;
   grid-template-areas:
     "header header"
     "sidenav main"
     "footer footer";
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   height: 100%;
 }
 
 .layout-header {
-  grid-area: header;
   display: flex;
   flex-direction: column;
+  grid-area: header;
 }
 
 .layout-main {
-  grid-area: main;
   flex: 1;
+  grid-area: main;
   min-width: 0;
 }
 

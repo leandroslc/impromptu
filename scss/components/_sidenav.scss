@@ -21,16 +21,16 @@ $item-padding-x: 1rem;
 
   @include core.bq-less-than('md') {
     position: fixed;
-    z-index: 999;
     top: 0;
     left: 0;
-    box-shadow: 1px 0 5px core.color('shadow');
+    z-index: 999;
     visibility: hidden;
+    box-shadow: 1px 0 5px core.color('shadow');
 
     &.is-expanded {
       visibility: visible;
-      transform: translateX(0);
       transition: transform 0.2s;
+      transform: translateX(0);
     }
   }
 }
@@ -53,26 +53,27 @@ $item-padding-x: 1rem;
 .sidebar-item {
   display: flex;
   align-items: center;
-  margin: 0.2rem 0;
   padding: 0.5rem $item-padding-x;
-  color: core.color('sidenav-item-text');
+  margin: 0.2rem 0;
   font-size: 0.9rem;
   font-weight: 500;
+  color: core.color('sidenav-item-text');
   text-decoration: none;
   border-radius: 0.3rem;
   transition: background-color 0.2s;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: core.color('sidenav-item-text-hover');
-    background-color: core.color('sidenav-item-bg-hover');
     text-decoration: none;
+    background-color: core.color('sidenav-item-bg-hover');
   }
 
   &.is-active {
-    margin-left: -#{$item-margin-x};
-    margin-right: -#{$item-margin-x};
     padding-right: #{$item-padding-x};
     padding-left: #{$item-padding-x + $item-margin-x};
+    margin-right: -#{$item-margin-x};
+    margin-left: -#{$item-margin-x};
     color: core.color('sidenav-item-active-text');
     background-color: core.color('sidenav-item-active-bg');
     border-right: #{$item-margin-x} solid #{core.color('sidenav-item-active-text')};
@@ -86,11 +87,11 @@ $item-padding-x: 1rem;
 
 .sidenav-backdrop {
   position: fixed;
-  z-index: 998;
   top: 0;
-  left: 0;
-  bottom: 0;
   right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 998;
   display: none;
   background-color: core.color('shadow');
   transition: background-color 0.2s;

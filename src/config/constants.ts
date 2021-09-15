@@ -1,4 +1,3 @@
-
 export const sidebarConstants = {
   expandedClass: 'is-expanded',
   backdropClass: 'sidenav-backdrop',

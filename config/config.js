@@ -7,7 +7,7 @@ const projects = {
 };
 
 const getOutputs = (name, outputMap) => {
-  return Object.keys(projects).map(project => {
+  return Object.keys(projects).map((project) => {
     const outputDir = path.join(projects[project], name);
 
     return outputMap(outputDir);

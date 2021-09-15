@@ -11,6 +11,12 @@
   <strong>Used by the <a href="https://github.com/leandroslc/nocturne-auth-server">Nocturne Auth Server</a></strong>
 </p>
 
+<div align="center">
+  <a href="https://github.com/leandroslc/impromptu/actions/workflows/ci.yml">
+    <img src="https://github.com/leandroslc/impromptu/workflows/Build/badge.svg" alt="Build status" />
+  </a>
+</div>
+
 
 ## Quick Setup
 - Clone the project.

@@ -7,7 +7,7 @@ $navbar-height: 3.75rem !default;
 
 $sidebar-width: 17.5rem !default;
 
-$color-inverse: #ffffff;
+$color-inverse: #fff;
 $color-inverse-900: #f5f5f5;
 $color-neutral: #141414;
 $color-primary: #3272b2;
@@ -38,7 +38,7 @@ $colors: (
   'sidenav-item-text-hover': $color-text,
   'text': $color-text,
   'user-menu-bg': $color-inverse,
-  'user-menu-border': rgba(0, 0, 0, .15),
+  'user-menu-border': rgba(0, 0, 0, 0.15),
   'user-menu-item-hover': color.change($color-primary, $alpha: 0.1),
   'user-menu-toggle-bg': $color-inverse-900,
 );

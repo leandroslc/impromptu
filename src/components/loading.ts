@@ -1,5 +1,11 @@
 import { loadingConstants } from '../config/constants';
-import { setDisabledAll, setEnabledAll, show, hide, tryGetElementById } from '../utils/elements';
+import {
+  setDisabledAll,
+  setEnabledAll,
+  show,
+  hide,
+  tryGetElementById,
+} from '../utils/elements';
 
 const ToggleAttribute = loadingConstants.toggleAttribute;
 const HideAttribute = loadingConstants.hideAttribute;
@@ -8,15 +14,18 @@ type IsValidHandler = (form: HTMLFormElement) => boolean;
 
 let isValid: IsValidHandler;
 
-function hasAtLeastOneElement(elements?: NodeListOf<Element> | null) {
-  return elements && elements.length > 0;
+function hasAtLeastOneElement(elements: NodeListOf<Element>) {
+  return elements.length > 0;
 }
 
 class Loading {
-  form: HTMLFormElement;
-  loading?: HTMLElement;
-  elementToHide?: HTMLElement;
-  submits?: NodeListOf<Element> | null;
+  private form: HTMLFormElement;
+
+  private loading?: HTMLElement;
+
+  private elementToHide?: HTMLElement;
+
+  private submits?: NodeListOf<Element> | null;
 
   constructor(form: HTMLFormElement) {
     this.form = form;
@@ -27,7 +36,7 @@ class Loading {
   }
 
   static initializeAll() {
-    this.findByToggle().forEach(loading => {
+    this.findByToggle().forEach((loading) => {
       loading.initialize();
       loading.attachSubmitEvent();
     });
@@ -38,9 +47,9 @@ class Loading {
 
     const loadings: Loading[] = [];
 
-    foundForms.forEach(foundForm =>
-      loadings.push(
-        new Loading(foundForm as HTMLFormElement)));
+    foundForms.forEach((foundForm) =>
+      loadings.push(new Loading(foundForm as HTMLFormElement)),
+    );
 
     return loadings;
   }
@@ -71,7 +80,10 @@ class Loading {
 
   attachSubmitEvent() {
     this.form.addEventListener('submit', (event) => {
-      if (isValid && isValid(event.currentTarget as HTMLFormElement) === false) {
+      if (
+        isValid &&
+        isValid(event.currentTarget as HTMLFormElement) === false
+      ) {
         return;
       }
 
@@ -80,8 +92,8 @@ class Loading {
   }
 
   start() {
-    if (hasAtLeastOneElement(this.submits)) {
-      setDisabledAll(this.submits!);
+    if (this.submits && hasAtLeastOneElement(this.submits)) {
+      setDisabledAll(this.submits);
     }
 
     if (this.loading) {
@@ -94,8 +106,8 @@ class Loading {
   }
 
   stop() {
-    if (hasAtLeastOneElement(this.submits)) {
-      setEnabledAll(this.submits!);
+    if (this.submits && hasAtLeastOneElement(this.submits)) {
+      setEnabledAll(this.submits);
     }
 
     if (this.loading) {

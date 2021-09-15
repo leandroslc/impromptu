@@ -19,10 +19,12 @@ export function setEnabledAll(elements: ElementCollection) {
 }
 
 export function show(element: HTMLElement) {
+  // eslint-disable-next-line no-param-reassign
   element.style.display = '';
 }
 
 export function hide(element: HTMLElement) {
+  // eslint-disable-next-line no-param-reassign
   element.style.display = 'none';
 }
 

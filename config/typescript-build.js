@@ -4,23 +4,28 @@ import typescript from '@rollup/plugin-typescript';
 import config from './config';
 
 const build = ({ bundleName, name, input, watch, production }) => {
-  const plugins = [
-    typescript(),
-  ];
+  const plugins = [typescript()];
 
   if (production) {
     plugins.push(terser());
   }
 
   const options = {
-    input: input,
-    output: config.getOutputs(bundleName, outputDir => {
+    input,
+    output: config.getOutputs(bundleName, (outputDir) => {
       return {
-        file: path.join(outputDir, config.getFileName({name: name || bundleName, extension: 'js', production})),
+        file: path.join(
+          outputDir,
+          config.getFileName({
+            name: name || bundleName,
+            extension: 'js',
+            production,
+          }),
+        ),
         format: 'iife',
       };
     }),
-    plugins: plugins,
+    plugins,
   };
 
   if (watch) {

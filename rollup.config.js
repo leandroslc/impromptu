@@ -30,13 +30,8 @@ const js = typescript({
 const imgs = copy({
   bundleName: 'img',
   inputs: {
-    ['']: './assets/imgs/*',
-  }
+    '': './assets/imgs/*',
+  },
 });
 
-export default [
-  css,
-  loginCss,
-  js,
-  imgs,
-];
+export default [css, loginCss, js, imgs];

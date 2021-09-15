@@ -13,11 +13,11 @@ const bootstrapCSS = sass({
 const bootstrapJS = copy({
   bundleName: 'bootstrap',
   inputs: {
-    ['']: [
+    '': [
       './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
-      './node_modules/bootstrap/dist/js/bootstrap.min.js'
+      './node_modules/bootstrap/dist/js/bootstrap.min.js',
     ],
-  }
+  },
 });
 
 const bootstrapIconsCSS = css({
@@ -29,14 +29,14 @@ const bootstrapIconsCSS = css({
 const bootstrapIconsFonts = copy({
   bundleName: 'bootstrap-icons',
   inputs: {
-    ['fonts']: './node_modules/bootstrap-icons/font/fonts/**/*',
+    fonts: './node_modules/bootstrap-icons/font/fonts/**/*',
   },
 });
 
 const cookieConsent = copy({
   bundleName: 'cookieconsent',
   inputs: {
-    ['']: [
+    '': [
       './node_modules/cookieconsent/build/cookieconsent.min.css',
       './node_modules/cookieconsent/build/cookieconsent.min.js',
     ],
@@ -60,7 +60,7 @@ const fontAwesomeFreeCss = sass({
 const fontAwesomeFreeFonts = copy({
   bundleName: 'fontawesome',
   inputs: {
-    ['webfonts']: './node_modules/@fortawesome/fontawesome-free/webfonts/**/*',
+    webfonts: './node_modules/@fortawesome/fontawesome-free/webfonts/**/*',
   },
 });
 
@@ -68,7 +68,7 @@ const imaskJS = copy({
   bundleName: 'imask',
   name: '',
   inputs: {
-    ['']: './node_modules/imask/dist/imask.min.js',
+    '': './node_modules/imask/dist/imask.min.js',
   },
   production: true,
 });
@@ -76,9 +76,9 @@ const imaskJS = copy({
 const jqueryJS = copy({
   bundleName: 'jquery',
   inputs: {
-    ['']: [
+    '': [
       './node_modules/jquery/dist/jquery.min.js',
-      './node_modules/jquery/dist/jquery.slim.min.js'
+      './node_modules/jquery/dist/jquery.slim.min.js',
     ],
   },
 });
@@ -86,7 +86,7 @@ const jqueryJS = copy({
 const jqueryValidationJS = copy({
   bundleName: 'jquery-validation',
   inputs: {
-    ['']: [
+    '': [
       './node_modules/jquery-validation/dist/jquery.validate.min.js',
       './node_modules/jquery-validation/dist/additional-methods.min.js',
     ],
@@ -96,7 +96,7 @@ const jqueryValidationJS = copy({
 const jqueryValidationUnobtrusiveJS = copy({
   bundleName: 'jquery-validation-unobtrusive',
   inputs: {
-    ['']: './node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js',
+    '': './node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js',
   },
 });
 

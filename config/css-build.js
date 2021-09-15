@@ -11,10 +11,17 @@ const build = ({ bundleName, input, watch, production }) => {
   }
 
   const options = {
-    input: input,
-    output: config.getOutputs(bundleName, outputDir => {
+    input,
+    output: config.getOutputs(bundleName, (outputDir) => {
       return {
-        file: path.join(outputDir, config.getFileName({name: bundleName, extension: 'css', production})),
+        file: path.join(
+          outputDir,
+          config.getFileName({
+            name: bundleName,
+            extension: 'css',
+            production,
+          }),
+        ),
       };
     }),
     plugins: [

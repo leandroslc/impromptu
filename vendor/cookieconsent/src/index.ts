@@ -2,7 +2,7 @@ import { Consent } from 'cookieconsent';
 
 declare global {
   interface Window {
-    cookieconsent: Consent
+    cookieconsent: Consent;
   }
 }
 
@@ -12,12 +12,11 @@ const getMetaSelector = (name: string) => `meta[name="${name}"]`;
 
 const getMetaValue = (name: string) => {
   const meta = document.head.querySelector(
-    getMetaSelector(`${MetaNamePreix}-${name}`));
+    getMetaSelector(`${MetaNamePreix}-${name}`),
+  );
 
-  return meta
-    ? meta.getAttribute('content')
-    : null;
-}
+  return meta ? meta.getAttribute('content') : null;
+};
 
 function initialize() {
   const message = getMetaValue('message');
@@ -40,14 +39,14 @@ function initialize() {
     position: 'bottom-right',
     showLink: false,
     content: {
-      message: message,
+      message,
       dismiss: dismiss || 'OK',
     },
   });
 }
 
 if (document.readyState === 'loading') {
-  document.addEventListener("DOMContentLoaded", initialize);
+  document.addEventListener('DOMContentLoaded', initialize);
 } else {
   initialize();
 }

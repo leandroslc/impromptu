@@ -6,19 +6,22 @@ const ExpandedClass = sidebarConstants.expandedClass;
 const BackdropClass = sidebarConstants.backdropClass;
 
 class Sidenav {
-  sidebarElement: HTMLElement;
-  toggleElement: HTMLElement;
-  backdropElement: HTMLElement;
+  private sidebarElement: HTMLElement;
+
+  private toggleElement: HTMLElement;
+
+  private backdropElement: HTMLElement;
 
   constructor(sidebar: HTMLElement, sidebarToggle: HTMLElement) {
     this.sidebarElement = sidebar;
     this.toggleElement = sidebarToggle;
-    this.backdropElement = this._createBackdrop();
+    this.backdropElement = this.createBackdrop();
   }
 
   static findByToggle() {
-    const toggleElement = document
-      .querySelector(`[${ToggleAttribute}]`) as HTMLElement;
+    const toggleElement = document.querySelector(
+      `[${ToggleAttribute}]`,
+    ) as HTMLElement;
 
     if (!toggleElement) {
       return null;
@@ -37,68 +40,79 @@ class Sidenav {
     return new Sidenav(sidebarElement, toggleElement);
   }
 
-  initialize() {
+  public initialize() {
     document.body.appendChild(this.backdropElement);
 
-    this.toggleElement.addEventListener('click', this._createToggleOnClickEvent());
-    this.backdropElement.addEventListener('click', this._createBackdropOnClickEvent());
+    this.toggleElement.addEventListener(
+      'click',
+      this.createToggleOnClickEvent(),
+    );
 
-    document.addEventListener('keyup', this._createDocumentOnKeyPressEvent());
+    this.backdropElement.addEventListener(
+      'click',
+      this.createBackdropOnClickEvent(),
+    );
+
+    document.addEventListener('keyup', this.createDocumentOnKeyPressEvent());
   }
 
-  _createBackdrop() {
+  private createBackdrop() {
     const backdrop = document.createElement('div');
     backdrop.classList.add(BackdropClass);
 
     return backdrop;
   }
 
-  _isExpandend() {
+  private isExpanded() {
     return this.sidebarElement.classList.contains(ExpandedClass);
   }
 
-  _open() {
-    this._setExpanded(this.sidebarElement, true);
-    this._setExpanded(this.backdropElement, true);
+  private open() {
+    this.setExpanded(this.sidebarElement, true);
+    this.setExpanded(this.backdropElement, true);
   }
 
-  _close() {
-    this._setExpanded(this.sidebarElement, false);
-    this._setExpanded(this.backdropElement, false);
+  private close() {
+    this.setExpanded(this.sidebarElement, false);
+    this.setExpanded(this.backdropElement, false);
   }
 
-  _setExpanded(element: HTMLElement, isExpanded: boolean) {
-    isExpanded
-      ? element.classList.add(ExpandedClass)
-      : element.classList.remove(ExpandedClass)
+  private setExpanded(element: HTMLElement, isExpanded: boolean) {
+    if (isExpanded) {
+      element.classList.add(ExpandedClass);
+    } else {
+      element.classList.remove(ExpandedClass);
+    }
   }
 
-  _createToggleOnClickEvent() {
+  private createToggleOnClickEvent() {
     return (event: Event) => {
       event.preventDefault();
 
-      this._isExpandend()
-        ? this._close()
-        : this._open();
+      if (this.isExpanded()) {
+        this.close();
+      } else {
+        this.open();
+      }
     };
   }
 
-  _createBackdropOnClickEvent() {
+  private createBackdropOnClickEvent() {
     return () => {
-      this._close();
+      this.close();
     };
   }
 
-  _createDocumentOnKeyPressEvent() {
+  private createDocumentOnKeyPressEvent() {
     return (event: KeyboardEvent) => {
-      if (!this._isExpandend()) {
+      if (!this.isExpanded()) {
         return;
       }
 
       if (event.key === EscapeKey) {
-        this._close();
+        this.close();
       }
-    }
+    };
   }
 }
 
